@@ -1,0 +1,15 @@
+<script src="js/validerStudentRegSkjema.js"></script>
+<form method="post" name="registrerStudentSkjema" id="registrerStudentSkjema" onsubmit="return valStudentRegSkjema()" action="">
+    Brukernavn:<br>
+    <input type="text" name="brukernavn" id="brukernavn" placeholder="on"><br>
+    Fornavn:<br>
+    <input type="text" name="fornavn" id="fornavn" placeholder="Ola"><br>
+    Etternavn:<br>
+    <input type="text" name="etternavn" id="etternavn" placeholder="Nordmann"><br>
+    Klassekode:<br>
+    <?php include("../listebokser/studentKlkode_Listeboks.php");?><br><br>
+    <input type="submit" name="registrer" value="Registrer" id="registrerKnapp"><br>
+</form>
+<br>
+<span id="jsFeil"></span>
+<br>

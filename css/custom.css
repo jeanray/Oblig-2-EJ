@@ -1,0 +1,11 @@
+#jsFeil {
+  color: red;
+  display: none;
+}
+.form-group-lg select[multiple].form-control {
+  max-width: 17%;
+}
+#gray {
+    color: gray;
+    background: lightgray;
+}

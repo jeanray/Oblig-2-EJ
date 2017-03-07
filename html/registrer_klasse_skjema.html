@@ -1,0 +1,14 @@
+<script src="js/validerKlasseRegSkjema.js"></script>
+<h3>Registrer ny klasse</h3>
+<form method="post" name="registrerKlasseSkjema" id="registrerKlasseSkjema" onsubmit="return valKlasseRegSkjema()" action="">
+    Klassekode:<br>
+    <input type="text" name="klassekode" id="klassekode" placeholder="IT1" required><br>
+    Klassenavn:<br>
+    <input type="text" name="klassenavn" id="klassenavn" placeholder="Informasjonssystemer 1. år" required><br><br>
+    <input type="submit" name="registrer" class="btn btn-primary" value="Registrer" id="registrerKnapp">
+    <input type="reset" name="nullstill" class="btn btn-warning" value="Nullstill skjema" id="resetKnapp">
+    <br>
+</form>
+<br>
+<span id="jsFeil" class="alert alert-danger" role="alert"></span>
+<br>
