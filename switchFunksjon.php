@@ -19,6 +19,10 @@ if (isset($_GET["funksjon"])) {
       include("registrer_student.php");
       break;
 
+    case "registrer_bilde":
+      include("registrer_bilde.php");
+      break;
+
     case "vis_alle_klasser":
       include("vis_klasser.php");
       break;
@@ -33,6 +37,10 @@ if (isset($_GET["funksjon"])) {
 
     case "endre_studenter":
       include("endre_studenter.php");
+      break;
+
+    case "endre_bilde":
+      include("endre_bilde.php");
       break;
 
     case "slette_klasse":
