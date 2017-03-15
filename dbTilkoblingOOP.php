@@ -4,7 +4,7 @@
 $tjener = "localhost";
 $brukernavn = "ej";
 $passord = "Vetle321";
-$database = "oblig1ej";
+$database = "oblig2ej";
   // Over definerer vi variabler vi trenger for å koble til databasen
 
 $dbLink = new mysqli($tjener, $brukernavn, $passord, $database);
