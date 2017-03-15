@@ -68,4 +68,5 @@ if(isset($_POST['endreStudentKnapp'])) {
     }
   }
 }
+
 ?>
