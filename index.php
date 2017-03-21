@@ -30,12 +30,12 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
+          <span class="sr-only">Toggle navigation</span> <!-- Alle disse span-taggene, er de egentlig i bruk?-->
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">skoleAdmin v0.4</a>
+        <a class="navbar-brand" href="index.php">skoleAdmin v1.0</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -83,12 +83,6 @@
     <?php
     include("switchFunksjon.php");  // Man kan velge å ha switch i egen fil, eller lime den inn her i index-filen. Ryddig å inkludere, IMO.
     ?>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </div>
 </body>
 </html>

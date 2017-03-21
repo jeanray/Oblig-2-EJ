@@ -1,6 +1,6 @@
 <?php
 echo<<<'SLUTTHTML'
-<h2>skoleAdmin v0.4</h2>
+<h2>skoleAdmin v1.0</h2>
 Velkommen til administratorpanelet!<br>
 Vennligst velg funksjon i menyen på toppen.<br>
 <noscript>
