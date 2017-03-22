@@ -10,6 +10,8 @@ echo <<<'ECHOSLUTT'
     <input type="text" name="fornavn" id="fornavn" placeholder="Ola" required><br>
     Etternavn:<br>
     <input type="text" name="etternavn" id="etternavn" placeholder="Nordmann" required><br>
+    Neste leveringsfrist:<br>
+    <input type="text" name="nesteFrist" id="nesteFrist" placeholder="DUMMY-NESTE FRIST"><br>
     Klassekode:<br>
     <select id="klassekodeFK" name="klassekodeFK">
 ECHOSLUTT;
