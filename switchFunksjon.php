@@ -31,6 +31,10 @@ if (isset($_GET["funksjon"])) {
       include("vis_studenter.php");
       break;
 
+    case "vis_alle_bilder":
+      include("vis_alle_bilder.php");
+      break;
+
     case "endre_klasser":
       include("endre_klasser.php");
       break;
@@ -39,8 +43,8 @@ if (isset($_GET["funksjon"])) {
       include("endre_studenter.php");
       break;
 
-    case "endre_bilde":
-      include("endre_bilde.php");
+    case "endre_bilder":
+      include("endre_bilder.php");
       break;
 
     case "slette_klasse":
@@ -49,6 +53,10 @@ if (isset($_GET["funksjon"])) {
 
     case "slette_student":
       include("slette_student.php");
+      break;
+
+    case "slette_bilde":
+      include("slette_bilde.php");
       break;
 
     case "sok":

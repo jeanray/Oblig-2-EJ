@@ -40,40 +40,67 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="index.php">Hjem </a></li>
+          <li><a href="index.php">Hjem</a></li>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registrering <span class="caret"></span></a>
             <ul class="dropdown-menu">
+
               <li><a href="index.php?funksjon=registrer_klasse">Klasse</a></li>
               <li role="separator" class="divider"></li>
+
+              <li><a href="?funksjon=registrer_bilde">Bilde</a></li>
+              <li role="separator" class="divider"></li>
+
               <li><a href="index.php?funksjon=registrer_student">Student</a></li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vis <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="index.php?funksjon=vis_alle_klasser">Klasse</a></li>
+
+              <li><a href="?funksjon=vis_alle_klasser">Klasser</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="index.php?funksjon=vis_alle_studenter">Student</a></li>
+
+              <li><a href="?funksjon=vis_alle_bilder">Bilder</a></li>
+              <li role="separator" class="divider"></li>
+
+              <li><a href="?funksjon=vis_alle_studenter">Studenter</a></li>
+
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Endre <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="index.php?funksjon=endre_klasser">Klasse</a></li>
+
+              <li><a href="?funksjon=endre_klasser">Klasse</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="index.php?funksjon=endre_studenter">Student</a></li>
+
+              <li><a href="?funksjon=endre_bilder">Bilde</a></li>
+              <li role="separator" class="divider"></li>
+
+              <li><a href="?funksjon=endre_studenter">Student</a></li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Slett <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="index.php?funksjon=slette_klasse">Klasse</a></li>
+
+              <li><a href="?funksjon=slette_klasse">Klasse</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="index.php?funksjon=slette_student">Student</a></li>
+
+              <li><a href="?funksjon=slette_bilder">Bilde</a></li>
+              <li role="separator" class="divider"></li>
+
+              <li><a href="?funksjon=slette_student">Student</a></li>
             </ul>
           </li>
-          <li><a href="index.php?funksjon=sok">Søk </a></li>
+            <!-- Søkefunksjon som enkeltknapp -->
+          <li><a href="index.php?funksjon=sok">Søk</a></li>
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
