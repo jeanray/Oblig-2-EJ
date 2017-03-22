@@ -62,9 +62,9 @@ if (isset($_POST["registrer"])) { // Hvis skjemaet er submitted kjører vi koden
     die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Spørringen ble ikke utført som forventet. Feil fra MySQL: " . $dbLink->error .  "</div>");
   }
 }
-  if ( isset($sqlObjekt) ) {
-    mysqli_free_result($sqlObjekt);
-  }
+if ( isset($sqlObjekt) ) {
+  mysqli_free_result($sqlObjekt);
+}
 // Vi må ha en foreign key sjekk, hvis ikke gir man en stygg feilmelding til brukeren
 // hvis man prøver å registrere en klassekode som ikke eksisterer i klasse.
 ?>
