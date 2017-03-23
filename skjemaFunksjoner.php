@@ -4,13 +4,14 @@
 noe dynamisk, som en listeboks. Da kjører man i så fall den tilhørende funksjonen i <?php skjemaListKlKoder(); ?>, og fortsetter med HTMLen,
 i dette tilfellet da med </select> osv osv. */
 
-function skjemaListKlkoder {
+function skjemaListKlkoder() {
   $sql = "SELECT klassekode FROM klasse;";
 
   $sqlObjekt = $dbLink->query($sql);
 
-  if ($sqlObjekt->num_rows == "0") {
+  if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra DBHS-et
       $errorArray[] = "<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du må først registrere en klasse før du kan registrere en student!";
+      return;
   }
 
   while ($rad = $sqlObjekt->fetch_assoc()) {
@@ -23,11 +24,12 @@ function skjemaListKlkoder {
 
 } // Funksjon for å skrive ut klassekoder avsluttes her
 
-function skjemaListBildenr {
+function skjemaListBildenr() {
   $sql = "SELECT bildenr FROM bilde;";
 
-  if ($sqlObjekt->num_rows == "0") {
+  if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra DBHS-et
     $errorArray[] = "<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du må først registrere et bilde!";
+    return;
   }
 
   while ($rad = $sqlObjekt->fetch_assoc()) {
