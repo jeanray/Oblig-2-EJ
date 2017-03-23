@@ -1,0 +1,46 @@
+Sjekk logget inn - lage funksjon for å sjekke om session er logget inn med et gyldig brukernavn
+
+sjekkInnlogget() {
+  session_start();
+  if session[ValidUser] {
+    return true;
+  } else
+  include("html/modal");
+
+  - kan den fyre opp modalen med en gang? Uansett, hvis sjekkInnlogget er false,
+  så må vi vise modalen. I tillegg må vi legge til link i modalen til å registrere ny bruker i stedet/ev forsidelink.
+  ev. en tekst om at du ikke er logget inn, før inkludering av modal med tilhørende knapp.
+}
+return true/false - dermed if (!$innlogget) {
+  vis_loginfunksjoner
+}
+
+Lage timer på session, som timer ut etter $var antall sekunder
+
+Lage en infoboks i hjørnet som viser hvem du er logget inn som.
+
+Lage sjekk av dobbelt passord
+
+password_hash må testes tidlig, men først enkel registrering av brukernavn med feil i ev. bare boks mysql->error
+
+Legge session rundt, bruke $_SESSION og ikke cookie-basert for å lagre intern brukerid som vi oppretter per session ?
+
+ftp til wp:
+B97a2BY
+smart
+
+loginfunksjoner:
+
+sjekkLoggetInn()
+visRegModal()
+visLoginModal()
+
+
+-- Utvidelse senere (om tid):
+  - Logg antall innloggingsforsøk
+  - Logg antall vellykkede innlogginger
+  - Legg til captcha på registrering ( !! hvis ikke blir det mye spam )
+  - Legg til confirmation-mail med random generert string med tekst, som må skrives inn inn på en confirmation-side for å regge bruker (varighet på 20 min elns, så kan vi bruke session kun)
+
+sendBekreftelsePost()
+sjekkBekreftelseStreng()
