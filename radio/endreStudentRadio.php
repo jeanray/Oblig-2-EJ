@@ -12,7 +12,7 @@ if ($sqlObjekt->num_rows == "0") { // Hvis vi ikke får tilbake noen studenter, 
 }
 
 print("<h3>Velg student du ønsker å endre:</h3>\n");
-print('<form action="" name="velgStudentRadio" id="velgStudentRadio" method="POST">');
+print('<form action="" name="velgStudentRadio" id="velgStudentRadio" method="POST">' . "\n");
 
 while ($rad = $sqlObjekt->fetch_assoc()) {
 
