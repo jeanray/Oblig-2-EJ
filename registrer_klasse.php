@@ -21,14 +21,14 @@ if (isset($_POST["registrer"])) {
 
   $sql = "SELECT klassekode FROM klasse;";
 
-if ($sqlObjekt = $dbLink->query($sql)) {
+  $sqlObjekt = $dbLink->query($sql);
 
   while ($rad = $sqlObjekt->fetch_assoc()) {
     if($rad["klassekode"] == $klassekode) {
       die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Klassekoden er allerede tatt i bruk, vennligst forsøk med en annen.</div>");
     }
   }
-}
+
   $sql = "INSERT INTO klasse VALUES ('$klassekode','$klassenavn');";
     // Definer sql-spørringen og sett den til variabelen $sql
 
