@@ -1,8 +1,9 @@
 <?php
 
+// FIL SOM LITE SANNSYNLIG BLIR BRUKT I DENNE OMGANGEN, MER EN IDE OG EN TESTING
+
 /* Tanken bak å lage disse (og det er bare en ide enn så lenge) er at vi kan bygge opp HTML frem til punktet hvor vi trenger
 noe dynamisk, som en listeboks. Da kjører man i så fall den tilhørende funksjonen i <?php skjemaListKlKoder(); ?>, og fortsetter med HTMLen, i dette tilfellet da med </select> osv osv. */
-
 $errorArray = array();
   // For å få globalt scope på error-arrayet så må den defineres utenfor funksjonene
 
