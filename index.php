@@ -108,7 +108,14 @@
 
   <div class="container">
     <?php
-    include("switchFunksjon.php");  // Man kan velge å ha switch i egen fil, eller lime den inn her i index-filen. Ryddig å inkludere, IMO.
+
+    // dbTilkoblingOOP burde inkluderes her, da den brukes i de aller, aller fleste filer
+
+    include("switchFunksjon.php");  // switch fil som inkluderer rette php i forhold til valgt funksjon
+
+    /* Hvis dbTilkoblingOOP inkluderes her, så må vi ha en $dbLink->close; også her. Makes sense,
+   da alternativet er å inkludere fila mange ganger, med tilsvarende lukkinger. Enig? -Jean */
+
     ?>
   </div>
 </body>
