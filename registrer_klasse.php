@@ -1,5 +1,5 @@
 <?php
-include("dbTilkoblingOOP.php");
+
 include("html/registrer_klasse_skjema.html");
 
 if (isset($_POST["registrer"])) {

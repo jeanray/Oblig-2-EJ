@@ -1,7 +1,5 @@
 <?php
 
-include("dbTilkoblingOOP.php");
-
 $sql="SELECT * FROM student ORDER BY etternavn;";
 
 $sqlObjekt = $dbLink->query($sql) or

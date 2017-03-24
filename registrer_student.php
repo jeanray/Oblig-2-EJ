@@ -1,5 +1,11 @@
 <?php
-include("dbTilkoblingOOP.php");
+
+/*
+Alle filer må nå ha en innlogget-sjekk. Hvis ikke innlogget, så inkluderer vi modalen for å registrere,
+men dreper så scriptet med die. Jeg TROR (håper) submitknappen i modalen fremdeles vil være aktuell.
+Mulig en funksjon for å sjekke om innlogget, for å så enten stoppe utføring av scriptet med tilhørende feilmld,
+eller hvis vellykket innlogging, kjøre session_start() - blir i så fall en funksjon vi inkluderer i en funksjonsfil.
+*/
 
 include("lag_studentSkjema.php"); // Inkluderer funksjoner for opprettelse av skjemaet
 
