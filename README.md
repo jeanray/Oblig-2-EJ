@@ -58,8 +58,8 @@ Brukerfunksjonen for å *vise alle studenter må endres* slik at **neste leverin
 
 Brukerfunksjonen for å *endre student* må endres slik at det også er mulig å **endre neste leveringsfrist og bildenr**.  
 
-**_Brukerefunksjonene for å registrere bilde og for å
-registrere student skal være helt separete brukerfunksjoner (ikke integreres i én brukerfunksjon)._**
+**Brukerefunksjonene for å registrere bilde og for å
+registrere student *skal være helt separete brukerfunksjoner* (ikke integreres i én brukerfunksjon).**
 
 Det skal lages en funksjon for registrering av bruker (med brukernavn og passord).  
 
@@ -69,3 +69,13 @@ Vedlikeholdsapplikasjonen skal endres slik at det kreves innlogging (med brukern
 
 *Besvarelsen av oppgaven skal ligge i følgende mappe på studentserveren: https://home.hbv.no
 /BRUKERNAVN/prg1100/innlevering2*
+
+
+:+1: Tror detta skal gå ganske ok, bare pass på å ta det bokstavelig og følg alle Geir sine behov.
+Siden det er oblig og godkjenningsfristen som gjelder, så er det like greit å bli ferdig med basisen og
+levere, så kan vi heller fokusere på å lære enda mer fancy shit, best practice-kode og diverse nye funksjoner
+når det er ledig tid fremover, slik at vi stiller til eksamen så godt forberedt som mulig.
+
+Det er nok ganske sannsynlig at denne gangen er det soleklart at "A-en sitter høyt" som er sitat fra Geir,
+og jeg ville ikke bli overrasket om oblig2 blir vurdert noe strengere enn før. Uansett, vi må møte alle
+beskrevene krav akkurat slik de står, det er sikkert :camel:
