@@ -1,8 +1,7 @@
 <?php
 
 /* Tanken bak å lage disse (og det er bare en ide enn så lenge) er at vi kan bygge opp HTML frem til punktet hvor vi trenger
-noe dynamisk, som en listeboks. Da kjører man i så fall den tilhørende funksjonen i <?php skjemaListKlKoder(); ?>, og fortsetter med HTMLen,
-i dette tilfellet da med </select> osv osv. */
+noe dynamisk, som en listeboks. Da kjører man i så fall den tilhørende funksjonen i <?php skjemaListKlKoder(); ?>, og fortsetter med HTMLen, i dette tilfellet da med </select> osv osv. */
 
 $errorArray = array();
   // For å få globalt scope på error-arrayet så må den defineres utenfor funksjonene
@@ -13,8 +12,7 @@ function skjemaListKlkoder() {
   $sqlObjekt = $dbLink->query($sql);  // Utfører spørringen
 
   if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra DBHS-et
-      $errorArray[] = "<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du må først registrere en klasse før du kan registrere en student!";
-      return;
+      die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Det eksisterer ikke noen klasser. Registrer en klasse.</div>");
   }
 
   while ($rad = $sqlObjekt->fetch_assoc()) { // Mens vi får rader fra sql skal vi printe klassekode i <option>-tagger
