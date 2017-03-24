@@ -79,3 +79,6 @@ når det er ledig tid fremover, slik at vi stiller til eksamen så godt forbered
 Det er nok ganske sannsynlig at denne gangen er det soleklart at "A-en sitter høyt" som er sitat fra Geir,
 og jeg ville ikke bli overrasket om oblig2 blir vurdert noe strengere enn før. Uansett, vi må møte alle
 beskrevene krav akkurat slik de står, det er sikkert :camel:
+
+Jeg mener strukturen som er brukt til nå i koden/filene/skjemaene vil fungere fint også for opplastingen
+(bildefunksjonen) og de ytterligere funksjonene som trengs i oblig2
