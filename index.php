@@ -92,7 +92,7 @@
               <li><a href="?funksjon=slette_klasse">Klasse</a></li>
               <li role="separator" class="divider"></li>
 
-              <li><a href="?funksjon=slette_bilder">Bilde</a></li>
+              <li><a href="?funksjon=slette_bilde">Bilde</a></li>
               <li role="separator" class="divider"></li>
 
               <li><a href="?funksjon=slette_student">Student</a></li>
