@@ -12,7 +12,7 @@
 
   $sqlObjekt = $dbLink->query($sql);
 
-  if ($sqlObjekt->num_rows == "0") {
+  if ($sqlObjekt->num_rows == "0") { // Finnes ingen bilder dør vi med passende feilmld
     die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Finner ingen bilder.</div>");
   }
 
