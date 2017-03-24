@@ -3,6 +3,7 @@ function startStSkjema() {
 echo <<<'ECHOSLUTT'
 <script src="js/validerStudentRegSkjema.js"></script>
 <h3>Registrer ny student</h3>
+<h4>Du må allerede ha registrert ønsket bilde for å kunne registrere en student..</h4>
 <form method="post" name="registrerStudentSkjema" id="registrerStudentSkjema" onsubmit="return valStudentRegSkjema()" action="">
     Brukernavn (to karakterer):<br>
     <input type="text" name="brukernavn" id="brukernavn" placeholder="on - Kun to bokstaver" required><br>
@@ -15,10 +16,18 @@ echo <<<'ECHOSLUTT'
     Klassekode:<br>
     <select id="klassekodeFK" name="klassekodeFK">
 ECHOSLUTT;
-}
+} // Kjører så spørringer for å sette inn i option-tagger
 
-function avsluttSkjema() {
-  // Denne funksjonen egner seg fint til gjenbruk/lukking av skjemaer generelt.
+function forsettStSkjema() {
+echo <<<'STOPPHER'
+    </select>
+    <br>
+    Bildenr:<br>
+    <select id="bildenrFK" name="bildenrFK">
+STOPPHER;
+} // Kjør php for å legge til option-tagger
+
+function avsluttStSkjema() {
 echo <<<'STOPPHER'
     </select>
     <br><br>
