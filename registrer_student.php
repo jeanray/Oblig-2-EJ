@@ -9,15 +9,32 @@ $sql = "SELECT klassekode FROM klasse;";
 
 $sqlObjekt = $dbLink->query($sql);
 
+if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra databasen dør vi med feilmld
+  die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Det finnes ingen klasser. Registrer en klasse for å fortsette.</div>");
+}
+
 while ($rad = $sqlObjekt->fetch_assoc()) {
   print ("<option>" . $rad["klassekode"] . "</option>");
 }
 
-avsluttSkjema(); // Avslutter skjemaet
+forsettStSkjema(); // Avslutter klassekodehenting, og starter bildenr
 
-if ($sqlObjekt->num_rows == "0") {
-  die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du må først registrere en klasse før du kan registrere en student.");
+$sql = "SELECT bildenr FROM bilde;";
+
+$sqlObjekt = $dbLink->query($sql);
+
+if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra databasen dør vi med feilmld
+  print("</select>\n</form>\n<br>"); // Avslutt selecten og formen for å vise feilmld
+
+  die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Det finnes ingen bilder. Registrer et bilde for å fortsette.</div>");
+  // Scriptet stoppes med passende feilmelding.
 }
+
+while ($rad = $sqlObjekt->fetch_assoc()) {
+  print ("<option>" . $rad["bildenr"] . "</option>");
+}
+
+avsluttStSkjema(); // Avslutter skjemaet
 
 if (isset($_POST["registrer"])) { // Hvis skjemaet er submitted kjører vi koden nedenfor
 
