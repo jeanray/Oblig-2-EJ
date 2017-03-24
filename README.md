@@ -41,23 +41,22 @@ brukerfunksjoner som ble laget i obligatorisk oppgave 3) *regner med det menes o
 Registrere et bilde i bildetabellen og laste opp et bilde til serveren (opplastingsdato skal ikke
 angis av bruker, men **lages automatisk av php-programmet**)  
 
-Vis alle bilder  
-(skriver ut en oversikt over alle registrerte bilder med bildenr, opplastingsdato, filnavn og beskrivelse)
+##### Vis alle bilder  
+(**skriver ut en oversikt** over **alle registrerte bilder** med **bildenr**, **opplastingsdato**, **filnavn** og **beskrivelse**)
 
-Endre beskrivelsen av et bilde
+##### Endre beskrivelsen av et bilde
 
-Slette et bilde i bildetabellen og slette bildet fra serveren
+##### Slette et bilde i bildetabellen og slette bildet fra serveren
+*Her kan vi følge tipset til rekkefølge fra Geir i forelesningen*
 
-Vis klasseliste med bilde (skriver ut en klasseliste med *fornavn, etternavn og bilde* for alle studenter i **en angitt klasse**)
+*Vis klasseliste med bilde*
+(skriver ut en **klasseliste** med *fornavn, etternavn og bilde* for alle studenter i **en angitt klasse**)
 
-Brukerfunksjonen for å registrere student må endres slik at neste leveringsfrist velges fra en kalende
-og slik at bildenr også registeres.  
+Brukerfunksjonen for å *registrere student* må endres slik at **neste leveringsfrist velges fra en kalende og slik at bildenr også registeres.**  
 
-Brukerfunksjonen for å vise alle studenter må endres slik at neste
-leveringsfrist og bildenr også vises.  
+Brukerfunksjonen for å *vise alle studenter må endres* slik at **neste leveringsfrist og bildenr** også vises.  
 
-Brukerfunksjonen for å endre student må endres slik at det også  
-er mulig å endre neste leveringsfrist og bildenr.  
+Brukerfunksjonen for å *endre student* må endres slik at det også er mulig å **endre neste leveringsfrist og bildenr**.  
 
 **Brukerefunksjonene for å registrere bilde og for å
 registrere student skal være helt separete brukerfunksjoner (ikke integreres i én brukerfunksjon).**
