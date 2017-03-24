@@ -58,8 +58,8 @@ Brukerfunksjonen for å *vise alle studenter må endres* slik at **neste leverin
 
 Brukerfunksjonen for å *endre student* må endres slik at det også er mulig å **endre neste leveringsfrist og bildenr**.  
 
-**Brukerefunksjonene for å registrere bilde og for å
-registrere student skal være helt separete brukerfunksjoner (ikke integreres i én brukerfunksjon).**
+**_Brukerefunksjonene for å registrere bilde og for å
+registrere student skal være helt separete brukerfunksjoner (ikke integreres i én brukerfunksjon)._**
 
 Det skal lages en funksjon for registrering av bruker (med brukernavn og passord).  
 
