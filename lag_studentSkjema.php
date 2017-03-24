@@ -18,7 +18,7 @@ echo <<<'ECHOSLUTT'
 ECHOSLUTT;
 } // Kjører så spørringer for å sette inn i option-tagger
 
-function forsettStSkjema() {
+function forsettStSkjema() { // Avslutter forrige select og starter en ny
 echo <<<'STOPPHER'
     </select>
     <br>
