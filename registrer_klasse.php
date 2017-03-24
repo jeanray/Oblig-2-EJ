@@ -21,7 +21,7 @@ if (isset($_POST["registrer"])) {
 
   $sql = "SELECT klassekode FROM klasse;";
 
-if (@$sqlObjekt = $dbLink->query($sql)) {
+if ($sqlObjekt = $dbLink->query($sql)) {
 
   while ($rad = $sqlObjekt->fetch_assoc()) {
     if($rad["klassekode"] == $klassekode) {
