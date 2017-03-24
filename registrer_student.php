@@ -17,6 +17,10 @@ while ($rad = $sqlObjekt->fetch_assoc()) {
   print ("<option>" . $rad["klassekode"] . "</option>");
 }
 
+if ( isset($sqlObjekt) ) { // Vi sjekker om den er satt, i tilfelle alternativ errorhandling
+  $sqlObjekt->free_result;
+}
+
 forsettStSkjema(); // Avslutter klassekodehenting, og starter bildenr
 
 $sql = "SELECT bildenr FROM bilde;";
@@ -32,6 +36,10 @@ if ($sqlObjekt->num_rows == "0") {  // Hvis vi ikke får noen rader fra database
 
 while ($rad = $sqlObjekt->fetch_assoc()) {
   print ("<option>" . $rad["bildenr"] . "</option>");
+}
+
+if ( isset($sqlObjekt) ) {
+  $sqlObjekt->free_result;
 }
 
 avsluttStSkjema(); // Avslutter skjemaet
@@ -80,7 +88,7 @@ if (isset($_POST["registrer"])) { // Hvis skjemaet er submitted kjører vi koden
   }
 }
 if ( isset($sqlObjekt) ) {
-  mysqli_free_result($sqlObjekt);
+  $sqlObjekt->free_result;
 }
 // Vi må ha en foreign key sjekk, hvis ikke gir man en stygg feilmelding til brukeren
 // hvis man prøver å registrere en klassekode som ikke eksisterer i klasse.
