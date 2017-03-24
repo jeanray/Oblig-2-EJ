@@ -13,7 +13,7 @@ IT3 | IT og informasjonsystemer 3. år
 
 #### STUDENT
 brukernavn | fornavn | etternavn | klassekode | neste leveringsfrist | bildenr
---- | --- | --- | --- | --- | --- 
+--- | --- | --- | --- | --- | ---
 gb | Geir | Bjarvin | IT1 | 2016-03-01 | 002
 mj | Marius | Johannessen | IT1 | 2016-03-01 | 003
 sm | Shegaw | Mengiste | IT2 | 2016-05-01 | 001
@@ -25,9 +25,9 @@ sm | Shegaw | Mengiste | IT2 | 2016-05-01 | 001
 **fremmednøkkel:**  
 *bildenr*  
 
-BILDE
+#### BILDE
 bildenr | opplastingsdato | filnavn | beskrivelse
-
+--- | --- | --- | --- 
 001 | 2016-03-01 | sm.jpg | flott bilde av Shegaw
 002 | 2016-04-01 | gb.jpg | grusomt bilde av Geir
 003 | 2016-04-15 | mj.jpg | Marius i solnedgang
@@ -72,4 +72,3 @@ Vedlikeholdsapplikasjonen skal endres slik at det kreves innlogging (med brukern
 
 *Besvarelsen av oppgaven skal ligge i følgende mappe på studentserveren: https://home.hbv.no
 /BRUKERNAVN/prg1100/innlevering2*
-
