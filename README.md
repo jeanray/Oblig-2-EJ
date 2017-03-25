@@ -36,7 +36,7 @@ bildenr | opplastingsdato | filnavn | beskrivelse
 *bildenr*
 
 Vedlikeholdsapplikasjonen skal inneholde følgende nye brukerfunksjoner (i tillegg til de
-brukerfunksjoner som ble laget i obligatorisk oppgave 3) *Det står slik i teksten, men vi regner med det menes oppgave 1*:  
+brukerfunksjoner som ble laget i obligatorisk oppgave 3): *Det står slik i teksten, men vi regner med det menes oppgave 1*  
 
 Registrere et bilde i bildetabellen og laste opp et bilde til serveren (opplastingsdato skal ikke
 angis av bruker, men **lages automatisk av php-programmet**)  
