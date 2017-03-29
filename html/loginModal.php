@@ -20,7 +20,7 @@
             <input type="password" class="form-control" name="hemmelig" id="hemmelig" placeholder="Passord">
           </div>
           <div class="modal-footer">
-            <a href="index.php" class="btn btn-info pull-left" role="button">Registrer bruker</a>
+            <a href="index.php" class="btn btn-info pull-left" role="button">Forsiden</a>
             <button type="button" class="btn btn-info" data-dismiss="modal">Lukk vinduet</button>
             <button type="submit" class="btn btn-success" data-dismiss="modal">Logg inn</button>
           </div>
