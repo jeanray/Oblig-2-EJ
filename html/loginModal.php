@@ -10,7 +10,7 @@
         <h4 class="modal-title">Vennligst logg inn for å bruke skoleAdmin:</h4>
       </div>
       <div class="modal-body">
-        <form> <!-- Start form-tag her -->
+        <form name="loginSkjema" id="loginSkjema" action="" method="POST"> <!-- Start form-tag her -->
           <div class="form-group">
             <label for="brukernavn" class="form-control-label">Brukernavn:</label>
             <input type="text" class="form-control" id="bruker" name="bruker" placeholder="Brukernavn">
@@ -29,3 +29,8 @@
     </div>
   </div>
 </div>
+
+<?php
+<br>
+var_dump($_POST);
+?>
