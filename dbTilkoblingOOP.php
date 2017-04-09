@@ -10,9 +10,10 @@ $database = "oblig2ej";
 $dbLink = new mysqli($tjener, $brukernavn, $passord, $database);
 
 if ($dbLink->connect_error) {
-  die("Fatal feil, kunne ikke koble til databasen: " . $dbLink->connect_error);
+  die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil, kunne ikke koble til databasen: " . $dbLink->connect_error . "</div>");
     // Over sjekker vi om tilkoblingen til databasen er opprettet. Er den ikke det,
     // dør scriptet, og mysql skriver ut feilmelding.
 }
-mysqli_set_charset($dbLink,"utf8");
+$dbLink->set_charset("utf8");
+
 ?>

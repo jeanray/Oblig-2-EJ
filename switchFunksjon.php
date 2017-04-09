@@ -11,6 +11,10 @@ if (isset($_GET["funksjon"])) {
 
   switch($valgtFunksjon): // "{" byttet ut med ":" -Emil
 
+    case "forside":
+      include("forside.php");
+      break;
+
     case "registrer_klasse":
       include("registrer_klasse.php");
       break;
@@ -63,6 +67,10 @@ if (isset($_GET["funksjon"])) {
       include("sok_i_database.php");
       break;
 
+    case "registrer":
+      include("registrer.php");
+      break;
+
     default: // Inntreffer kun hvis man skriver inn URL manuelt og da med ?funksjon=noe_annet_enn_i_switchen
     print("Funksjonen du har valgt er ugyldig, vennligst bruk menyen over for å velge funksjon.");
 
@@ -72,6 +80,6 @@ if (isset($_GET["funksjon"])) {
   // Her "mangler" det nå en krølleparentes sier magefølelsen min :D Men mange veier til capt. morgan!
   // I tillegg fucker det opp autoindenteringen til editoren
 } else {
-  include("forside.php");
+  include("forsidelogginn.php");
 }
 ?>
