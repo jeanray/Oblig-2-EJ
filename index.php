@@ -24,6 +24,10 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+  <!-- Vi har byttet fra lokale filer til CDN-utgaver alle steder hvor det er mulig, av flere gode grunner (effektivt,oppdatert,osv)-->
+  <!-- De lokale filene er i hovedsak kun for tilpassinger av plugins vi henter via CDN-utgavene.-->
+
 </head>
 <body>
   <nav class="navbar navbar-default">
