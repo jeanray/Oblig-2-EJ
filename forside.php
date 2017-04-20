@@ -2,7 +2,7 @@
 echo<<<'SLUTTHTML'
 <h2>skoleAdmin v1.0</h2>
 Velkommen til administratorpanelet!<br>
-Vennligst velg funksjon i menyen på toppen.<br>
+Vennligst velg funksjon i menyen på toppen.<br><br>
 <noscript>
     <style type="text/css">
         .pagecontainer {display:none;}
@@ -13,5 +13,4 @@ Vennligst velg funksjon i menyen på toppen.<br>
     </div>
 </noscript>
 SLUTTHTML;
-
 ?>
