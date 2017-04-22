@@ -8,7 +8,7 @@ if (isset($_POST["registrer"])) {
     $passFraSkjema=trim($_POST["passord"]);
     $passordHashet = password_hash($passFraSkjema, PASSWORD_DEFAULT, array("cost" => 12));
       // Best practice OG det Geir lærte bort == rette måten å gjørra no på imo ;D
-    var_dump($passordHashet);
+
     print("<br>");
 
     $sql="INSERT INTO brukarar(brukarnamn, kjenneord) VALUES ('$brNavnFraSkjema','$passordHashet');";
