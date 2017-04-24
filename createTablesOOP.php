@@ -17,18 +17,32 @@ if ($dbLink->query($sql)) { // Vi kjører spørringen mot databasen via $dblink
   print "Feil ved registrering av tabell, feilmelding fra mysql: \"" . mysqli_error($dbLink) . "\".<br>";
 }
 
+$sql = "CREATE TABLE bilde (
+  bildenr CHAR(3) PRIMARY KEY,
+  opplastingsdato DATE,
+  filnavn VARCHAR(64),
+  beskrivelse TEXT
+);";
+
+if ($dbLink->query($sql)) { // Vi utfører spørringen, og skriver ut ev. feilmeldinger vi måtte få.
+  print("Tabellen \"bilde\"ble opprettet i databasen \"$database\".\n<br>");
+} else { // Ev. feilmelding blir skrevet ut. Vanlig feil her er at tabellen allerede eksisterer.
+  print "Feil ved registrering av tabell: " . mysqli_error($dbLink) . "<br>";
+}
+
 $sql = "CREATE TABLE student (
   brukernavn CHAR(2) PRIMARY KEY,
   fornavn VARCHAR(32) NOT NULL,
   etternavn VARCHAR(64) NOT NULL,
   klassekode VARCHAR(32),
-  FOREIGN KEY (klassekode) REFERENCES klasse(klassekode)
-  );"; // SQL-kode for å opprette en tabell til, oppgave, som har tre kolonner og en primærnøkkel som består
-    // av data fra to forskjellige kolonner, fagkode og oppgavenr. I tillegg er det satt en fremmednøkkel, som
-    // er en referanse til primørnøkkelen i tabellen fag, som er fagkode-kolonnen.
+  nestelevfrist DATE,
+  bildenr CHAR(3),
+  FOREIGN KEY (klassekode) REFERENCES klasse(klassekode),
+  FOREIGN KEY (bildenr) REFERENCES bilde(bildenr)
+);"; // SQL-kode for å opprette student-tabllen med tilhørende fremmednøkler slik oblig2 forutsetter
 
 if ($dbLink->query($sql)) { // Vi utfører spørringen, og skriver ut ev. feilmeldinger vi måtte få.
-  print("Tabellen \"oppgave\"ble opprettet i databasen \"$database\".\n<br>");
+  print("Tabellen \"student\"ble opprettet i databasen \"$database\".\n<br>");
 } else { // Ev. feilmelding blir skrevet ut. Vanlig feil her er at tabellen allerede eksisterer.
   print "Feil ved registrering av tabell: " . mysqli_error($dbLink) . "<br>";
 }
@@ -47,3 +61,35 @@ if ($dbLink->query($sql)) { // Vi utfører spørringen, og skriver ut ev. feilme
 } else { // Ev. feilmelding blir skrevet ut. Vanlig feil her er at tabellen allerede eksisterer.
   print "Feil ved registrering av tabell: " . mysqli_error($dbLink) . "<br>";
 }
+
+/* Under kommer ren SQL, som kan kopieres og limes inn i et SQL-interface (MySQL-syntax)
+
+CREATE TABLE klasse (
+  klassekode VARCHAR(32) PRIMARY KEY, -- Er primary key, dermed automatisk 'not null'
+  klassenavn VARCHAR(128) NOT NULL
+);
+
+CREATE TABLE bilde (
+  bildenr CHAR(3) PRIMARY KEY,
+  opplastingsdato DATE,
+  filnavn VARCHAR(64),
+  beskrivelse TEXT
+);
+
+CREATE TABLE student (
+  brukernavn CHAR(2) PRIMARY KEY,
+  fornavn VARCHAR(32) NOT NULL,
+  etternavn VARCHAR(64) NOT NULL,
+  klassekode VARCHAR(32),
+  nestelevfrist DATE,
+  bildenr CHAR(3),
+  FOREIGN KEY (klassekode) REFERENCES klasse(klassekode),
+  FOREIGN KEY (bildenr) REFERENCES bilde(bildenr)
+);
+
+CREATE TABLE brukarar (
+  brukarnamn VARCHAR(64) PRIMARY KEY,
+  kjenneord VARCHAR(255)
+);
+
+*/
