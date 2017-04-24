@@ -1,5 +1,16 @@
 <?php
 
+function erInnlogget() {
+  // Her er vi kun ute etter å sjekke om det er en innlogget bruker fra før av. Den siste sjekken er i hovedsak
+  // tatt fra stackoverflow sine eks, men jeg ser ikke helt poenget med den (enda)..
+
+  if (!isset($_SESSION('innlogga') && !isset($_SESSION('bruker') && $_SESSION['innlogga'] == true))) {
+    echo "<h3>Du ser ikke ut til å være logget inn, du blir nå videresendt til innloggingssiden.</h3>";
+    echo '<META HTTP-EQUIV=REFRESH CONTENT="2; innlogging.php">';
+    // for dobbel sikkerhet, slik at ingen får tilgang til siden uansett om de haxxer, så kan fila også dø her.
+  }
+}
+
 function korrektPassord($brukernavn, $hashetPass) {
 
   // Siden vi kun henter ut en kolonne fra en tabell, gir denne sql-spørringen kun en rad som svar.
