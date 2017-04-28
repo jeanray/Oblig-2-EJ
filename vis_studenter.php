@@ -17,7 +17,7 @@ print("<h3>Studenter</h3>");
 // Overskrift
 print("<table  class=\"table table-striped\" id=\"studenttabell\">\n");
   // Start html-tabellen med ny linje(\n) for ryddig kildekode i nettleseren
-print("<tr>\n<th>Brukernavn:</th>\n<th>Fornavn:</th>\n<th>Etternavn:</th>\n<th>Klassekode:</th>\n</tr>\n");
+print("<tr>\n<th>Brukernavn:</th>\n<th>Fornavn:</th>\n<th>Etternavn:</th>\n<th>Klassekode:</th>\n<th>Neste frist:</th>\n<th>Bildenummer:</th></tr>\n");
   // Skriver første rad i tabellen, som er innholdsforklaring
 while ($rad = $sqlSvar->fetch_array(MYSQLI_ASSOC)) {
   // Kjører while sålenge vi får rader fra DBHSet som en assoc_array

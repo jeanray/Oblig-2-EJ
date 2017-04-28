@@ -13,10 +13,13 @@
   <!-- jQuery må være med av diverse grunner (BS++) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/jquery-ui.theme.css" rel="stylesheet">
 
   <!-- JS-scripts skal egentlig bli lagt inn til slutt for å sikre raskest mulig sidelasting... -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/confirm.js"></script>
+  <script src="js/norskdp.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,6 +30,9 @@
 
   <!-- Vi har byttet fra lokale filer til CDN-utgaver alle steder hvor det er mulig, av flere gode grunner (effektivt,oppdatert,osv)-->
   <!-- De lokale filene er i hovedsak kun for tilpassinger av plugins vi henter via CDN-utgavene.-->
+
+  <!-- Her er datepickeren -->
+  <script src="js/datepicker.js"></script>
 
 </head>
 <body>

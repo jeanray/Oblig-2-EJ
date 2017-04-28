@@ -17,6 +17,8 @@ if ( isset($_POST["velgStudentKnapp"]) ) {
   print('<input type="text" name="fornavn" value="' . $student['fornavn'] . "\" required><br>\n");
   print("Etternavn:<br>\n");
   print('<input type="text" name="etternavn" value="' . $student['etternavn'] . "\"required><br>\n");
+  print("Neste frist:<br>\n");
+  print('<input type="text" id="nesteFrist" name="nestefrist" value="' . $student['nestelevfrist'] . "\"required><br>\n");
   print("Klassekode:<br>\n");
   print('<select id="klassekode" name="klassekode" required><br>');
 
@@ -36,7 +38,29 @@ if ( isset($_POST["velgStudentKnapp"]) ) {
       // Hvis ikke klassekoden tilhører studenten legger vi den bare til på vanlig måte i dropdown-menyen
     }
   }
-  // Under bruker vi et eks. på HEREDOC
+
+  print("</select><br>");
+  print("Bildenr:<br>\n");
+  print('<select id="bildenr" name="bildenr" required><br>');
+  
+  $sql = "SELECT bildenr FROM student;";
+    // Vi spør om alle klassekoder slik at vi kan fylle ut dropdown-menyen
+
+  $sqlObjekt = $dbLink->query($sql);
+    // Spørringen blir utført
+
+  while ($rad = $sqlObjekt->fetch_assoc()) { // Vi looper igjennom alle radene vi får fra spørringen
+
+    if ($student['bildenr'] == $rad["bildenr"]) {
+      print ("<option selected>" . $rad["bildenr"] . "</option>");
+        // Hvis klassekoden tilhører valgte student, setter vi den pre-selected i dropdown-menyen
+    } else {
+    print ("<option>" . $rad["bildenr"] . "</option>");
+      // Hvis ikke klassekoden tilhører studenten legger vi den bare til på vanlig måte i dropdown-menyen
+    }
+  }
+
+// Under bruker vi et eks. på HEREDOC
 echo <<<'STOPPHER'
   </select>
   <br><br>
@@ -57,9 +81,11 @@ if(isset($_POST['endreStudentKnapp'])) {
     $brukernavn=$_POST["brukernavn"];
     $fornavn=$_POST["fornavn"];
     $etternavn=$_POST["etternavn"];
+    $nestefrist=$_POST["nestefrist"];
     $klassekode=$_POST["klassekode"];
+    $bildenr=$_POST["bildenr"];
 
-    $sql = "UPDATE student SET fornavn='$fornavn', etternavn='$etternavn', klassekode='$klassekode' WHERE brukernavn='$brukernavn';";
+    $sql = "UPDATE student SET fornavn='$fornavn', etternavn='$etternavn', nestelevfrist='$nestefrist', klassekode='$klassekode', bildenr='$bildenr' WHERE brukernavn='$brukernavn';";
 
     if(!$dbLink->query($sql)) {
       die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Ikke mulig å endre student.</div>");
