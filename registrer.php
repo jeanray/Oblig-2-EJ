@@ -62,7 +62,7 @@ if (isset($_POST["regAdmin"])) {
       // Best practice OG det Geir lærte bort == rette måten å gjørra no på imo ;D
     print("<br>");
 
-    $sql="SELECT brukarnamn FROM brukarar WHERE brukarnamn='$brNavnFraSkjema'";
+    $sql="SELECT brukarnamn FROM brukarar WHERE brukarnamn='$brNavnFraSkjema';";
 
     $sqlObjekt = $dbLink->query($sql);
 
