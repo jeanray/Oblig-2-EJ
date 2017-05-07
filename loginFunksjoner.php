@@ -1,29 +1,33 @@
 <?php
 
-function erInnlogget() {
+function ikkeInnlogget() {
   // Her er vi kun ute etter å sjekke om det er en innlogget bruker fra før av. Den siste sjekken er i hovedsak
   // tatt fra stackoverflow sine eks, men jeg ser ikke helt poenget med den (enda)..
 
-  if (!isset($_SESSION('innlogga') && !isset($_SESSION('bruker') && $_SESSION['innlogga'] == true))) {
-    echo "<h3>Du ser ikke ut til å være logget inn, du blir nå videresendt til innloggingssiden.</h3>";
-    echo '<META HTTP-EQUIV=REFRESH CONTENT="2; innlogging.php">';
+  if (!isset($_SESSION["innlogget"]) || !isset($_SESSION["brukernavn"]) ) {
+    return true;
+  //  echo '<META HTTP-EQUIV=REFRESH CONTENT="2; innlogging.php">';
     // for dobbel sikkerhet, slik at ingen får tilgang til siden uansett om de haxxer, så kan fila også dø her.
   }
 }
 
-function korrektPassord($brukernavn, $hashetPass) {
+/*
+function korrektPassord($unavn, $skjemaPass) {
 
   // Siden vi kun henter ut en kolonne fra en tabell, gir denne sql-spørringen kun en rad som svar.
   // Dermed blir dette [0], som vi ser når vi bruker den etter å ha utført spørringen. Dermed nøyer vi oss
   // også med å bare hente ut en numerisk array, da vi utifra den veldig spesifiserte spørringen ikke trenger noe annet.
 
-  $sql = "SELECT kjenneord FROM brukarar WHERE brukarnamn='$brukernavn';";
+  $sql = "SELECT kjenneord FROM brukarar WHERE brukarnamn='$unavn';";
 
   $sqlObjekt = $dbLink->query($sql);
 
   $hashPassordArray = $sqlObjekt->fetch_array(MYSQLI_NUM);
 
-  if (password_verify($hashetPass, $hashPassordArray[0])) {
+  if (password_verify($skjemaPass, $hashPassordArray[0])) {
+    print("DIGG WETSEX");
+    return true;
+
     // Her kan vi sette inn våre session-variabler som viser at brukeren er logget inn.
     // På sikt kan vi også satse på å få inn flere andre variabler her, flere detaljer om brukeren
     // ville vært normalt å ha, blant annet, sannsynlig utføre logging til database.
