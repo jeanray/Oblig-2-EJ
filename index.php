@@ -120,7 +120,7 @@ if (ikkeInnlogget()) {
               <li><a href="?funksjon=slette_student">Student</a></li>
             </ul>
           </li>
-            <!-- Søkefunksjon som enkeltknapp -->
+            <!-- Søkefunksjon og utlogging som enkeltknapper -->
           <li><a href="index.php?funksjon=sok">Søk</a></li>
           <li><a href="index.php?funksjon=logg_ut">Logg ut</a></li>
         </ul>
@@ -131,12 +131,10 @@ if (ikkeInnlogget()) {
   <div class="container">
     <?php
 
-    include("switchFunksjon.php");  // switch fil som inkluderer rette php i forhold til valgt funksjon
+      include("switchFunksjon.php");  // switch fil som inkluderer rette php i forhold til valgt funksjon
 
-    /* Hvis dbTilkoblingOOP inkluderes her, så må vi ha en $dbLink->close; også her. Makes sense,
-   da alternativet er å inkludere fila mange ganger, med tilsvarende lukkinger. Enig? -Jean */
-   $dbLink->close;
-
+      $dbLink->close;
+        // Over lukker vi tilkoblingen til databasen som vi har jobbet med hele veien via "switch-includes".
     ?>
   </div>
 </body>
