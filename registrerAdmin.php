@@ -18,7 +18,7 @@ if (isset($_POST["registrer"])) {
     print("Brukeren <b>$brNavnFraSkjema</b> ble registrert!<br>\n");
     print("Du blir nå sendt tilbake til hovedsiden.<br>\n");
 
-    echo '<META HTTP-EQUIV=REFRESH CONTENT="2; index.php">';
+    echo '<META HTTP-EQUIV=REFRESH CONTENT="2; innlogging.php">';
       // Vent tre sekunder for at brukeren rekker å se meldingen, og redirect
 }
 
