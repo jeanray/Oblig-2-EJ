@@ -1,8 +1,10 @@
 <?php
+print("<h2>skoleAdmin v1.0</h2>");
+print("<h3>Velkommen til administratorpanelet!</h3>");
+print("Du er logget inn som <b>" . $_SESSION["brukernavn"] . "</b>.<br>");
+
 echo<<<'SLUTT'
-<h2>skoleAdmin v1.0</h2>
-<h4>Velkommen til administratorpanelet!</h4>
-Vennligst velg funksjon i menyen på toppen.<br><br>
+<h5>Vennligst velg funksjon i menyen på toppen.</h5><br>
 <noscript>
     <style type="text/css">
         .pagecontainer {display:none;}
@@ -14,5 +16,5 @@ Vennligst velg funksjon i menyen på toppen.<br><br>
 </noscript>
 SLUTT;
 
-print("Du er logget inn som <b>" . $_SESSION["brukernavn"] . "</b>.");
+
 ?>
