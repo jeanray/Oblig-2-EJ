@@ -133,7 +133,7 @@ if (ikkeInnlogget()) {
 
       include("switchFunksjon.php");  // switch fil som inkluderer rette php i forhold til valgt funksjon
 
-      $dbLink->close;
+      $dbLink->close();
         // Over lukker vi tilkoblingen til databasen som vi har jobbet med hele veien via "switch-includes".
     ?>
   </div>
