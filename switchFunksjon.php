@@ -36,7 +36,7 @@ if (isset($_GET["funksjon"])) {
       break;
 
     case "vis_alle_bilder":
-      include("vis_alle_bilder.php");
+      include("vis_bilder.php");
       break;
 
     case "endre_klasser":
@@ -71,6 +71,10 @@ if (isset($_GET["funksjon"])) {
       include("registrer.php");
       break;
 
+    case "logg_ut":
+      include("logg_ut.php");
+      break;
+
     default: // Inntreffer kun hvis man skriver inn URL manuelt og da med ?funksjon=noe_annet_enn_i_switchen
     print("Funksjonen du har valgt er ugyldig, vennligst bruk menyen over for å velge funksjon.");
 
@@ -80,6 +84,6 @@ if (isset($_GET["funksjon"])) {
   // Her "mangler" det nå en krølleparentes sier magefølelsen min :D Men mange veier til capt. morgan!
   // I tillegg fucker det opp autoindenteringen til editoren
 } else {
-  include("forsidelogginn.php");
+  include("forside.php");
 }
 ?>
