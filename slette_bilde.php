@@ -1,5 +1,5 @@
 <?php
-  print("<h3>Slett bilder</h3>");
+
   /* Det er i bildetabellen hovednøkkelen for bilde er, men den blir også brukt som
   fremmednøkkel (FK) i student-tabellen. Dermed vil det være logisk å sjekke først om det
   tilhører noen studenter til bildet.
