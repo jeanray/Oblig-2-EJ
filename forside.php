@@ -1,7 +1,7 @@
 <?php
-echo<<<'SLUTTHTML'
+echo<<<'SLUTT'
 <h2>skoleAdmin v1.0</h2>
-Velkommen til administratorpanelet!<br>
+<h4>Velkommen til administratorpanelet!</h4>
 Vennligst velg funksjon i menyen på toppen.<br><br>
 <noscript>
     <style type="text/css">
@@ -12,5 +12,7 @@ Vennligst velg funksjon i menyen på toppen.<br><br>
     JavaScript kreves også for å utnytte all funksjonalitet på nettstedet.</h4><br>
     </div>
 </noscript>
-SLUTTHTML;
+SLUTT;
+
+print("Du er logget inn som <b>" . $_SESSION["brukernavn"] . "</b>.");
 ?>
