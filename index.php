@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("loginFunksjoner.php");
+include("dbTilkoblingOOP.php");
+
+?>
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -36,6 +42,12 @@
 
 </head>
 <body>
+<?php
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
+?>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -110,7 +122,7 @@
           </li>
             <!-- Søkefunksjon som enkeltknapp -->
           <li><a href="index.php?funksjon=sok">Søk</a></li>
-
+          <li><a href="index.php?funksjon=logg_ut">Logg ut</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -119,8 +131,6 @@
   <div class="container">
     <?php
 
-    // dbTilkoblingOOP inkluderes her, da den brukes i de aller, aller fleste filer
-    include("dbTilkoblingOOP.php"); // Opprette databasetilkoblingen
     include("switchFunksjon.php");  // switch fil som inkluderer rette php i forhold til valgt funksjon
 
     /* Hvis dbTilkoblingOOP inkluderes her, så må vi ha en $dbLink->close; også her. Makes sense,
