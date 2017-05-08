@@ -2,7 +2,6 @@
 function startStSkjema() {
 echo <<<'ECHOSLUTT'
 <script src="js/validerStudentRegSkjema.js"></script>
-<h6><div class="alert alert-info" role="alert">Du må allerede ha registrert ønsket bilde for å kunne registrere en student..</div></h6>
 <h3>Registrer ny student</h3>
 <form method="post" name="registrerStudentSkjema" id="registrerStudentSkjema" onsubmit="return valStudentRegSkjema()" action="">
     Brukernavn (to karakterer):<br>
