@@ -33,7 +33,7 @@
             <h5>Du blir automatisk logget inn og videresendt til forsiden etter registrering.</h5>
             <form id="regSkjema" name="regSkjema" method="POST">
               <input type="text" id="brukernavn" name="brukernavn" class="form-control input-group" placeholder="Ønsket brukernavn">
-              </br>
+              <span id="brNavnHjelp" class="help-block"><i>Brukernavn kan kun bestå av a til z, og <b>maksimalt ti karakterer</b></i></span>
               <input type="password" id="passord" name="passord" class="form-control input-group" placeholder="Passord">
               </br>
           <div class="wrapper">
@@ -57,9 +57,13 @@ include("dbTilkoblingOOP.php");
 if (isset($_POST["regAdmin"])) {
     $brNavnFraSkjema=$_POST["brukernavn"];
     $passFraSkjema=$_POST["passord"];
+
+    if (!preg_match('/^[A-z]{0,10}$/', $brNavnFraSkjema)) {
+      die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Brukernavnet kan kun bestå av ti karakterer, der karakterene må være bokstavene fra A til Z. Store og små bokstaver kan benyttes.</div>");
+    }
     // Hash passordet før vi lagrer det i databasen.
     $passordHashet = password_hash($passFraSkjema, PASSWORD_DEFAULT);
-      // Best practice OG det Geir lærte bort == rette måten å gjørra no på imo ;D
+
     print("<br>");
 
     $sql="SELECT brukarnamn FROM brukarar WHERE brukarnamn='$brNavnFraSkjema';";
@@ -71,12 +75,12 @@ if (isset($_POST["regAdmin"])) {
         die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Brukernavnet er allerede brukt, vennligst forsøk med et annet.</div>");
       }
     }
-
+// Det hadde vært artig å satt restriksjon på brukernavnet til å kun inneholde karakterer A-z, maksimalt 10
     $sql="INSERT INTO brukarar(brukarnamn, kjenneord) VALUES ('$brNavnFraSkjema','$passordHashet');";
 
     if($sqlObjekt = $dbLink->query($sql)) {
       print("<div class=\"alert alert-success\">Brukeren <b>$brNavnFraSkjema</b> ble registrert!<br>\n");
-      print("Du blir nå sendt tilbake til hovedsiden. Blir du ikke videresendt <a href="index.php">kan du trykke her</a><br></div>\n");
+      print("Du blir nå sendt tilbake til hovedsiden. Blir du ikke videresendt <a href=\"index.php\">kan du trykke her</a><br></div>\n");
       $_SESSION["brukernavn"] = "$brNavnFraSkjema";
       $_SESSION["innlogget"] = "1";
     } else {
