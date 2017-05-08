@@ -40,6 +40,10 @@ include("dbTilkoblingOOP.php");
   <!-- Her er datepickeren -->
   <script src="js/datepicker.js"></script>
 
+  <!-- Lightbox for bildevisning -->
+  <link href="css/lightbox.css" rel="stylesheet">
+
+
 </head>
 <body>
 <?php
@@ -137,5 +141,8 @@ if (ikkeInnlogget()) {
         // Over lukker vi tilkoblingen til databasen som vi har jobbet med hele veien via "switch-includes".
     ?>
   </div>
+
+  <!-- Lightbox js for visning av bilder -->
+  <script src="js/lightbox.js"></script>
 </body>
 </html>
