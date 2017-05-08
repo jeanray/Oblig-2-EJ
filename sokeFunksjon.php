@@ -1,5 +1,7 @@
 <?php
 
+include_once("dbTilkoblingOOP.php");
+
 if(isset($_GET["sokeStreng"])) {
   $sok = htmlspecialchars($_GET["sokeStreng"]);
 

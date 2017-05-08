@@ -9,7 +9,7 @@ if (isset($_GET["funksjon"])) {
 
   // Kan gjøre et eksperiment og se på eksempler med bruk av switch, og se hva som er mest brukt?
 
-  switch($valgtFunksjon): // "{" byttet ut med ":" -Emil
+  switch($valgtFunksjon) {
 
     case "forside":
       include("forside.php");
@@ -67,10 +67,6 @@ if (isset($_GET["funksjon"])) {
       include("sok_i_database.php");
       break;
 
-    case "registrer":
-      include("registrer.php");
-      break;
-
     case "logg_ut":
       include("logg_ut.php");
       break;
@@ -79,11 +75,10 @@ if (isset($_GET["funksjon"])) {
     print("Funksjonen du har valgt er ugyldig, vennligst bruk menyen over for å velge funksjon.");
 
     // endswitch istede for curly brackets. Gjør koden mer human readable og kalles for syntactic sugar
-
-  endswitch;
+    // kan ta diskusjonen siden -jean - per nå så fucker det opp editoren min, og jeg velger brackets
+  }
   // Her "mangler" det nå en krølleparentes sier magefølelsen min :D Men mange veier til capt. morgan!
-  // I tillegg fucker det opp autoindenteringen til editoren
-} else {
-  include("forside.php");
+} else { // Slutt på $GET_["funksjon"]
+  include("forside.php"); // Skriv ut en standard forside siden ingen funksjon er valgt.
 }
 ?>
