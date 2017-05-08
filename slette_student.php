@@ -1,4 +1,10 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
 
 $sql = "SELECT * FROM student ORDER BY etternavn;";
 $sqlObjekt = $dbLink->query($sql);
