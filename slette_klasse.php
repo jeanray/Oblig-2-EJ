@@ -1,4 +1,10 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
 
 $sql = "SELECT * FROM klasse ORDER BY klassekode;";
 $sqlObjekt = $dbLink->query($sql);
@@ -33,7 +39,7 @@ if (isset($_POST["slettKlasse"])) {
     if ($sqlObjekt = $dbLink->query($sql)) {
       print("<div class=\"alert alert-success\"> Klassen med klassekode \"". $verdi . "\" er nå slettet.<br></div>"); // erstattes med spørringsutføring
     } else {
-      die('<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du har sannsynligvis studenter tilknyttet klassen ' . $verdi .'.<br>Forsøk å slett disse studentene først.</div>');
+      die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Du har sannsynligvis studenter tilknyttet klassen \"" . $verdi ."\".<br>Forsøk å slett disse <b>studentene først.</b></div>");
     }
   }
 }
