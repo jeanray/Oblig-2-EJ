@@ -8,6 +8,12 @@ eller hvis vellykket innlogging, kjøre session_start() - blir i så fall en fun
 */
 
 include("lag_studentSkjema.php"); // Inkluderer funksjoner for opprettelse av skjemaet
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
 
 startStSkjema(); // Starter en HTML-form for registrering av student (StudentSkjema)
 
@@ -61,7 +67,8 @@ if (isset($_POST["registrer"])) { // Hvis skjemaet er submitted kjører vi koden
   $fornavn = htmlspecialchars($_POST["fornavn"]);
   $etternavn = htmlspecialchars($_POST["etternavn"]);
   $klassekodeFK = $_POST["klassekodeFK"];
-
+  $nesteLevFrist = $_POST["nesteFrist"];
+  $bildenrFK = htmlspecialchars($_POST["bildenrFK"]);
 
 // Er det kanskje bedre å lage en egen variabel for strlen i denne if-setningen? I forhold til lesbarhet?
 // Eller fuck it? -Emil
@@ -81,20 +88,25 @@ if (isset($_POST["registrer"])) { // Hvis skjemaet er submitted kjører vi koden
 
   while ($rad = $sqlObjekt->fetch_assoc()) {
     if($rad["brukernavn"] == $brukernavn) {
-      die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Brukernavnet er allerede tatt i bruk, forsøk et annet.</div>");
+      die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Brukernavnet er allerede brukt, forsøk et annet.</div>");
     }
   }
 
-  $sql = "INSERT INTO student VALUES ('$brukernavn','$fornavn','$etternavn','$klassekodeFK');";
+  if ( isset($sqlObjekt) ) {
+    $sqlObjekt->free_result();
+    unset($sqlObjekt);
+  }
 
-  if ($dbLink->query($sql) === TRUE) {
-    print("<div class=\"alert alert-success\">Student \"$fornavn $etternavn\" ble lagt til.</div><br>");
+  $sql = "INSERT INTO student VALUES ('$brukernavn','$fornavn','$etternavn','$klassekodeFK','$nesteLevFrist','$bildenrFK');";
+
+  if ($dbLink->query($sql)) {
+    print("<div class=\"alert alert-success\">Studenten \"$fornavn $etternavn\" ble lagt til.</div><br>");
   } else {
     die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Spørringen ble ikke utført som forventet. Feil fra MySQL: " . $dbLink->error .  "</div>");
   }
 }
 if ( isset($sqlObjekt) ) {
-  $sqlObjekt->free_result;
+  $sqlObjekt->free_result();
 }
 // Vi må ha en foreign key sjekk, hvis ikke gir man en stygg feilmelding til brukeren
 // hvis man prøver å registrere en klassekode som ikke eksisterer i klasse.
