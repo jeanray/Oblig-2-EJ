@@ -1,15 +1,24 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
 
 include ("radio/endreStudentRadio.php");
 
 if ( isset($_POST["velgStudentKnapp"]) ) {
-  
+
   $valgtBrukernavn=$_POST["brukernavn"];
 
   $sql = "SELECT * FROM student WHERE brukernavn='$valgtBrukernavn';";
   $sqlObjekt = $dbLink->query($sql);
 
   $student = $sqlObjekt->fetch_assoc();
+
+  $valgtBildenr = $student["bildenr"];
+  $valgtKlkode = $student["klassekode"];
 
   print("<h4>Endre valgt student</h4>\n<form method=\"post\">\nBrukernavn:<br>\n");
   print('<input type="text" name="brukernavn" id="gray" value="' . $student['brukernavn'] . "\" readonly><br>\n");
@@ -30,7 +39,7 @@ if ( isset($_POST["velgStudentKnapp"]) ) {
 
   while ($rad = $sqlObjekt->fetch_assoc()) { // Vi looper igjennom alle radene vi får fra spørringen
 
-    if ($student['klassekode'] == $rad["klassekode"]) {
+    if ($student["klassekode"] == $rad["klassekode"]) {
       print ("<option selected>" . $rad["klassekode"] . "</option>");
         // Hvis klassekoden tilhører valgte student, setter vi den pre-selected i dropdown-menyen
     } else {
@@ -42,17 +51,20 @@ if ( isset($_POST["velgStudentKnapp"]) ) {
   print("</select><br>");
   print("Bildenr:<br>\n");
   print('<select id="bildenr" name="bildenr" required><br>');
-  
-  $sql = "SELECT bildenr FROM student;";
+
+  $sql = "SELECT bildenr FROM bilde;";
     // Vi spør om alle klassekoder slik at vi kan fylle ut dropdown-menyen
 
   $sqlObjekt = $dbLink->query($sql);
     // Spørringen blir utført
-
+  if ($sqlObjekt->nun_rows == "0") {
+    print("</select>\n</form>\n<br>");
+    die("<div class=\"alert alert-danger\" role=\"alert\">Fatal feil: Det ser ut til at det ikke finnes noen bilder. Dette er veldig rart..</div>");
+  }
   while ($rad = $sqlObjekt->fetch_assoc()) { // Vi looper igjennom alle radene vi får fra spørringen
 
-    if ($student['bildenr'] == $rad["bildenr"]) {
-      print ("<option selected>" . $rad["bildenr"] . "</option>");
+    if ($valgtBildenr == $rad["bildenr"]) {
+      print("<option selected>" . $rad["bildenr"] . "</option>");
         // Hvis klassekoden tilhører valgte student, setter vi den pre-selected i dropdown-menyen
     } else {
     print ("<option>" . $rad["bildenr"] . "</option>");
