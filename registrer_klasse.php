@@ -1,4 +1,10 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
 
 include("html/registrer_klasse_skjema.html");
 
@@ -39,6 +45,6 @@ if (isset($_POST["registrer"])) {
   }
 }
 if ( isset($sqlObjekt) ) {
-  mysqli_free_result($sqlObjekt);
+  mysqli_free_result($sqlObjekt); // Hvorfor procedual?!
 }
 ?>
