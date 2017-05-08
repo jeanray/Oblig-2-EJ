@@ -16,7 +16,7 @@ if ($dbLink->query($sql)) { // Vi kjører spørringen mot databasen via $dblink
 } else { // Ev. feilmelding blir skrevet ut. Vanlig feil her er at tabellen allerede eksisterer.
   print "Feil ved registrering av tabell, feilmelding fra mysql: \"" . mysqli_error($dbLink) . "\".<br>";
 }
-
+  // Vi bruker såpass lang datatype på filnavn for å ta høyde for at den kan inneholde hele filstien og navnet
 $sql = "CREATE TABLE bilde (
   bildenr CHAR(3) PRIMARY KEY,
   opplastingsdato DATE NOT NULL,
