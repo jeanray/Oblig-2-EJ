@@ -1,4 +1,11 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
+
 echo<<<'SLUTTHTML'
 <script src="js/sokeFunksjon.js"></script>
 <noscript>
@@ -11,7 +18,6 @@ echo<<<'SLUTTHTML'
     Søkefunksjonen bruker AJAX, som er JavaScript-avhengig.<br>
     Beklager ulempen, i fremtiden skal vi forsøke å finne en bedre løsning for mangel på JS i forbindelse med AJAX-funksjoner.
     </h5>
-    <!-- Det var da veldig formelt -->
     </div>
 </noscript>
 <div class="col-lg-5">
