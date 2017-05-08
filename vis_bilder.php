@@ -1,4 +1,11 @@
 <?php
+include_once("loginFunksjoner.php");
+
+if (ikkeInnlogget()) {
+  echo '<META HTTP-EQUIV=REFRESH CONTENT="3; innlogging.php">';
+  die("<div class=\"alert alert-danger\">Du må være logget inn for å bruke denne siden, <a href=\"innlogging.php\">vennligst trykk her om du ikke blir videresendt.</a></div>");
+}
+
 // include(".php"); -- Innloggingssjekken deres
 include("dbTilkoblingOOP.php");
 
@@ -8,16 +15,16 @@ $sqlSpørring = "SELECT * FROM bilde;";
 $sqlResultat = mysqli_query($dbLink, $sqlSpørring) or die ("Det skjedde en feil med databasetilkoblingen.");
 
 print('<table class="table table-striped">');
-print('<thead> <tr> <th>Bildenummer</th> <th>Opplastningsdato</th> <th>Filnavn</th> <th>Bildebeskrivelse</th> <th>Visning</th> </tr> </thead>');
+print('<thead> <tr> <th>Bildenummer</th> <th>opplastingsdato</th> <th>Filnavn</th> <th>Bildebeskrivelse</th> <th>Visning</th> </tr> </thead>');
 
 foreach ($sqlResultat as $verdi) {
   $bildenr = $verdi["bildenr"];
-  $opplastningsdato = $verdi["opplastningsdato"];
+  $opplastingsdato = $verdi["opplastingsdato"];
   $filnavn = $verdi["filnavn"];
   $beskrivelse = $verdi["beskrivelse"];
   $bildebane = "/bilder";
 
-  print("<tbody> <tr> <td>$bildenr</td> <td>$opplastningsdato</td> <td>$filnavn</td> <td>$beskrivelse</td> <td><a href='$bildebane/$filnavn'</td> </tr> </tbody>");
+  print("<tbody> <tr> <td>$bildenr</td> <td>$opplastingsdato</td> <td>$filnavn</td> <td>$beskrivelse</td> <td><a href='$bildebane/$filnavn' data-lightbox='$filnavn' data-title='$beskrivelse'><img src='$bildebane/$filnavn' height=100 width=100></a></td> </tr> </tbody>");
 }
 
 print('</table>');
